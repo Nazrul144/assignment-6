@@ -15,7 +15,7 @@ const showingPosts = (posts) =>{
 
         //Create a div element:
         const div = document.createElement('div');
-        div.classList = `card w-7/12 bg-base-100 shadow-xl py-8`;
+        div.classList = `card lg:w-7/12 bg-base-100 shadow-xl py-8`;
         div.innerHTML = `
         <div class="flex">
         <div class="ml-8 mt-8 ">
