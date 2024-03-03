@@ -50,18 +50,20 @@ const showingPosts = (posts) =>{
         postsContainer.appendChild(div);
 
     })
+    seatsCount();
 
 }
 
-
+let sum = 1;
 const addingAnotherInfo = (title,view_count) =>{
 
-  //CountCard:
-  const countCard = document.getElementById('countCard').innerText;
-  const convertToNumber = parseInt(countCard);
-  convertToNumber + 1;
-  console.log(convertToNumber);
-  
+  //Card-Counting: 
+  const currentCard = document.getElementById('countCard');
+  const convertToNumber = +currentCard.innerText; 
+  let countingTotalCard = parseInt(convertToNumber) + sum;
+  console.log(countingTotalCard);
+  currentCard.innerHTML = countingTotalCard; 
+
 
   console.log(title, view_count);
   const addingAuthorInfo = document.getElementById('addingAuthorInfo');
@@ -115,7 +117,6 @@ const displayLatestPosts = (latestPosts) =>{
        latestPostContainer.appendChild(div);
   })
 }
-
 
 // latestPost();
 
