@@ -1,18 +1,22 @@
 console.log("Connected!");
 
-const loadData = async () =>{
-    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+const loadData = async (inputText) =>{
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`)
     const data = await response.json();
     const posts = data.posts;
     showingPosts(posts);
 }
 
+
+
+
+
+
 const showingPosts = (posts) =>{
     
     const postsContainer = document.getElementById('card-container');
-    //Active symbol adding:
-
-   
+    //Clear card-container before adding new card:
+    postsContainer.textContent = ''
 
     posts.forEach((post)=>{
         console.log(post);
@@ -50,8 +54,6 @@ const showingPosts = (posts) =>{
         postsContainer.appendChild(div);
 
     })
-    seatsCount();
-
 }
 
 let sum = 1;
@@ -118,6 +120,15 @@ const displayLatestPosts = (latestPosts) =>{
   })
 }
 
-// latestPost();
 
-loadData();
+
+//Search Function:
+const inputSearchField = () =>{
+  const inputSearchField = document.getElementById('inputSearchField');
+  const inputText = inputSearchField.value;
+  loadData(inputText);
+}
+
+latestPost();
+
+loadData('');

@@ -21,22 +21,40 @@
             max-width: 1170px;
             background-color: tomato;
         }
+
+        .horizontal-line {
+      border-bottom: 1px solid #ccc; /* You can adjust the color and thickness */
+      margin: 20px 0; /* You can adjust the margin as needed */
+    }
     </style>
 
 </head>
 
 <body class="mx-auto">
     <header>
-        <nav>
+        <nav class="mt-12">
             <div class="flex justify-between items-center">
                 <div>
                     <h3 class="font-extrabold text-4xl">ReTro</h3>
                 </div>
-                <div class="flex gap-2">
-                    <div class="bg-[#0C0D2D04] p-4 rounded-full"><i class="fa-solid fa-house"></i></div>
-                    <div class="bg-[#0C0D2D04] p-4 rounded-full"><i class="fa-solid fa-pen"></i></div>
-                    <div class="bg-[#0C0D2D04] p-4 rounded-full"><i class="fa-solid fa-user-plus"></i></div>
-                    <div class="bg-[#0C0D2D04] p-4 rounded-full"><i class="fa-regular fa-flag"></i></div>
+                <div class="flex items-center gap-2">
+
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn rounded-full bg-[#0C0D2D04] border-none"><a href="#"><i class="fa-solid fa-house"></i></a></button>
+                      </div>
+
+                    <div class="tooltip" data-tip="edit">
+                        <button class="btn rounded-full bg-[#0C0D2D04] border-none"><a href="#"><i class="fa-solid fa-pen"></i></a></button>
+                      </div>
+
+                    <div class="tooltip" data-tip="add">
+                        <button class="btn rounded-full bg-[#0C0D2D04] border-none"><a href="#"><i class="fa-solid fa-user-plus"></i></a></button>
+                      </div>
+
+                    <div class="tooltip" data-tip="hello">
+                        <button class="btn rounded-full bg-[#0C0D2D04] border-none"><a href="#"><i class="fa-regular fa-flag"></i></a></button>
+                      </div>
+
                     <div
                         class="bg-[#4F7DFC] rounded-full font-bold text-white text-xl w-36 h-14 flex items-center justify-center">
                         <button>Sign In</button></div>
@@ -50,11 +68,12 @@
                     Forum</h1>
                 <p class="text-xl text-[#FFFFFFCC] mt-6">Share your favorite opinion and win and wp forum coffee mug!
                 </p>
+                <!-- Search Field  -->
                 <div class="mt-8 relative">
-                    <input type="text" placeholder=" Search here anything "
+                    <input id="inputSearchField" type="text" placeholder=" Search here anything "
                         class="input input-bordered w-full max-w-xs p-8 rounded-full " />
                     <button
-                        class="bg-[#4F7DFC] rounded-full py-2 px-4 font-bold text-white text-xl absolute left-52 top-3">Search</button>
+                       onclick="inputSearchField()" class="bg-[#4F7DFC] rounded-full py-2 px-4 font-bold text-white text-xl absolute left-52 top-3">Search</button>
                 </div>
             </div>
             <div class="w-96 h-72 rounded bg-[white] ml-8 mr-24 lg:mt-24 mb-24">
@@ -77,31 +96,7 @@
         <section class="dynamic-section mt-24">
             <div class=" lg:flex gap-2 ">
                 <div id="card-container" class="grid grid-cols-1 gap-4">
-                    <div class="card  bg-base-100 shadow-xl  ">
-                      
-                        <div class="flex relative">
-                            <div class="ml-8 mt-8 ">
-                                <figure><img class = "w-20 h-20 rounded-lg" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                            </div>
-                            <div class="card-body  ">
-                                <div id="activeSymbol" class="bg-green-400 h-4 w-4 rounded-full absolute -ml-11 -mt-2"></div>
-                                <h2 class="card-title">Music <span>Author: Nazrul Islam</span></h2>
-                                <p>10 Kids Unaware of Their Halloween Costume</p>
-                                <p>10 Kids Unaware of Their Halloween Costume</p>
-                                <hr>
-                                <div class="flex justify-evenly gap-28">
-                                  <div class="flex gap-8">
-                                    <div><i class="fa-regular fa-message"></i></div>
-                                  <div><i class="fa-regular fa-eye"></i></div>
-                                  <div><i class="fa-regular fa-clock"></i></div>
-                                  </div>
-                                  <div>
-                                    <i class="fa-regular fa-envelope-open"></i>
-                                </div>
-                                </div>
-                              </div>
-                        </div> 
-                      </div>
+                
                 </div>
 
                 <!-- Div will be dynamically created here  -->
@@ -109,11 +104,6 @@
                     <span class="ml-4 text-xl font-bold">Title</span>
                     <span class="ml-48">Mark as read: <span class="font-bold" id="countCard">0</span></span>
                     
-                    <!-- <div class="bg-white rounded-lg flex justify-between px-4 py-2 shadow-2xl">
-                        <h1>I am nothing</h1>
-                        <p><i class="fa-regular fa-eye"></i><span> 00000</span></p>
-                    </div> -->
-
                 </div>
 
         
@@ -122,7 +112,7 @@
         </section>
 
         <section>
-            <div class="bg-black flex justify-between rounded">
+            <div class="bg-black flex justify-between rounded-lg mt-24">
                 <div class="w-1/2 mt-24 ml-8 lg:ml-24">
                     <h1 class="text-4xl font-extrabold text-white">Join Our Forum</h1>
                     <p class="text-xl text-white mt-6 mb-6">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
@@ -135,7 +125,7 @@
             </div>
         </section>
         <!-- Latest Post's section  -->
-        <section class="mt-24 mb-24">
+        <section class="mt-20 mb-24">
             <h1 class="text-center text-4xl font-bold">Latest Posts</h1>
             <p class="text-xl w-4/5 text-center mx-auto mt-6">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined.</p>
 
@@ -158,26 +148,30 @@
         </section>
 
     </main>
-    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-       <div>
-        <h1 class="text-4xl font-bold">ReTro</h1>
-        <p>Here you can contact with us through the following media. <br>
-        Stay with us</p>
-       </div>
-        <nav>
-          <div class="grid grid-flow-col gap-4">
-            <div><i class="fa-brands fa-twitter"></i></div>
-            <div><i class="fa-brands fa-facebook"></i></div>
-            <div><i class="fa-brands fa-instagram"></i></div>
-            <div><i class="fa-brands fa-github"></i></div>
+
+    <footer>
+        <div>
+            <div>
+                <h1 class="text-4xl font-bold text-center">ReTro</h1>
+                <p class="text-center mt-4">Here you can contact with us through the following media. <br>
+                Stay with us</p>
+               </div>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-8">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
           </div>
-         
-        </nav> 
-        <aside>
-          <p>2017, All Rights Reserved.</p>
-          <div class="border-t mt-2"></div>
-        </aside>
-      </footer>
+          <div class="border-b border-gray-400 my-8"></div>
+
+          <div class="flex justify-center mt-8">
+            <p class="mb-12">2017, All Rights Reserved.</p>
+          </div>
+
+    </footer>
+
     <script src="js/script.js"></script>
 </body>
 
