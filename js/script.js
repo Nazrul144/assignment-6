@@ -53,7 +53,16 @@ const showingPosts = (posts) =>{
 
 }
 
+
 const addingAnotherInfo = (title,view_count) =>{
+
+  //CountCard:
+  const countCard = document.getElementById('countCard').innerText;
+  const convertToNumber = parseInt(countCard);
+  convertToNumber + 1;
+  console.log(convertToNumber);
+  
+
   console.log(title, view_count);
   const addingAuthorInfo = document.getElementById('addingAuthorInfo');
 
@@ -67,6 +76,47 @@ const addingAnotherInfo = (title,view_count) =>{
 
 }
 
+//Latest Post: 
+const latestPost = async() =>{
+  const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+  const latestPosts = await response.json();
+  displayLatestPosts(latestPosts);
+  
+}
 
+const displayLatestPosts = (latestPosts) =>{
+  const latestPostContainer = document.getElementById('latestPostContainer');
+
+  latestPosts.forEach((latestPost) =>{
+    console.log(latestPost);
+       const div = document.createElement('div');
+       div.classList = ` card card-compact w-96 bg-base-100 shadow-xl `
+
+
+       div.innerHTML = ` 
+       <div class="card card-compact w-96 h-full bg-base-100 shadow-xl">
+                    <figure><img src="${latestPost.cover_image}" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title"><i class="fa-regular fa-calendar"></i><span>${latestPost.author?.posted_date? latestPost.author.posted_date:'No publish date'}</span></h2>
+                      <p class = "font-bold text-xl">${latestPost.title}</p>
+                      <p>${latestPost.description}</p>
+                      <div class="flex gap-2 items-center">
+                        <div>
+                        <img class = "w-11 h-11 rounded-full" src="${latestPost.profile_image}" alt="">
+                        </div>
+                        <div>
+                        <p class = "font-bold text-xl">${latestPost.author.name}</p>
+                        <p class = "font-bold text-xl">${latestPost?.author?.designation || 'Unknown'}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+       `;
+       latestPostContainer.appendChild(div);
+  })
+}
+
+
+// latestPost();
 
 loadData();
