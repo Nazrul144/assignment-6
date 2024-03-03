@@ -16,7 +16,7 @@ const showingPosts = (posts) =>{
     
     const postsContainer = document.getElementById('card-container');
     //Clear card-container before adding new card:
-    postsContainer.textContent = ''
+    postsContainer.textContent = '';
 
     posts.forEach((post)=>{
         console.log(post);
@@ -124,6 +124,9 @@ const displayLatestPosts = (latestPosts) =>{
 
 //Search Function:
 const inputSearchField = () =>{
+  //Spinner 
+  const spinner = document.getElementById('spinner');
+  spinner.classList.remove('hidden');
   const inputSearchField = document.getElementById('inputSearchField');
   const inputText = inputSearchField.value;
   loadData(inputText);
