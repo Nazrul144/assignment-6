@@ -75,15 +75,16 @@
             </div>
         </section>
         <section class="dynamic-section mt-24">
-            <div class="main">
+            <div class=" lg:flex gap-2 ">
                 <div id="card-container" class="grid grid-cols-1 gap-4">
-                    <div class="card lg:w-7/12 bg-base-100 shadow-xl ">
+                    <div class="card  bg-base-100 shadow-xl  ">
                       
-                        <div class="flex">
-                            <div class="ml-8 mt-8">
+                        <div class="flex relative">
+                            <div class="ml-8 mt-8 ">
                                 <figure><img class = "w-20 h-20 rounded-lg" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body  ">
+                                <div id="activeSymbol" class="bg-green-400 h-4 w-4 rounded-full absolute -ml-11 -mt-2"></div>
                                 <h2 class="card-title">Music <span>Author: Nazrul Islam</span></h2>
                                 <p>10 Kids Unaware of Their Halloween Costume</p>
                                 <p>10 Kids Unaware of Their Halloween Costume</p>
@@ -98,16 +99,26 @@
                                     <i class="fa-regular fa-envelope-open"></i>
                                 </div>
                                 </div>
-                               
                               </div>
                         </div> 
                       </div>
                 </div>
 
-                <div class="side-div">
+                <!-- Div will be dynamically created here  -->
+                <div id="addingAuthorInfo">
+                    <span class="ml-4 text-xl font-bold">Title</span>
+                    <span class="ml-48">Mark as read (4)</span>
+                    
+                    <!-- <div class="bg-white rounded-lg flex justify-between px-4 py-2 shadow-2xl">
+                        <h1>I am nothing</h1>
+                        <p><i class="fa-regular fa-eye"></i><span> 00000</span></p>
+                    </div> -->
 
                 </div>
+
+        
             </div>
+            
         </section>
 
         <section>
