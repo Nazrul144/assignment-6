@@ -23,10 +23,10 @@ const showingPosts = (posts) => {
     const div = document.createElement('div');
     div.classList = `card bg-[#F3F3F5] shadow-xl py-8 `;
     div.innerHTML = `
-        <div class = "h-4 w-4 rounded-full absolute ml-28 mt-6 ${post?.isActive ? 'bg-green-400' : 'bg-red-400'}">
+        <div class = "h-4 w-4 rounded-full absolute ml-52 lg:ml-28 lg:mt-6 ${post?.isActive ? 'bg-green-400' : 'bg-red-400'}">
         
         </div>
-        <div class="flex">
+        <div class="lg:flex">
         <div class="ml-8 mt-8 ">
             <figure><img class = "w-24 h-24 rounded-lg" src="${post.image}" alt="Shoes" /></figure>
         </div>
