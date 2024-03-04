@@ -25,7 +25,8 @@ const showingPosts = (posts) =>{
         const div = document.createElement('div');
         div.classList = `card bg-[#F3F3F5] shadow-xl py-8 `;
         div.innerHTML = `
-        <div class = "h-4 w-4 rounded-full absolute ml-28 mt-6 bg-green-400">
+        <div class = "h-4 w-4 rounded-full absolute ml-28 mt-6 ${post?.isActive ? 'bg-green-400' : 'bg-red-400'}">
+        
         </div>
         <div class="flex">
         <div class="ml-8 mt-8 ">
@@ -53,8 +54,18 @@ const showingPosts = (posts) =>{
         `;
         postsContainer.appendChild(div);
 
+        // if(post.isActive){
+        //   div.style.backgroundColor = 'green'
+        // }else{
+        //   div.style.backgroundColor = 'red'
+        // }
     })
+
+  
+    
 }
+
+
 
 let sum = 1;
 const addingAnotherInfo = (title,view_count) =>{
@@ -124,9 +135,13 @@ const displayLatestPosts = (latestPosts) =>{
 
 //Search Function:
 const inputSearchField = () =>{
-  //Spinner 
+  //Spinner
   const spinner = document.getElementById('spinner');
   spinner.classList.remove('hidden');
+  setTimeout(() => {
+    spinner.classList.add('hidden');
+  },2000);
+
   const inputSearchField = document.getElementById('inputSearchField');
   const inputText = inputSearchField.value;
   loadData(inputText);
