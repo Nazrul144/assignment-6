@@ -6,6 +6,7 @@ const loadData = async (inputText) => {
   showingPosts(posts);
 }
 
+//Showing allPosts:
 
 const showingPosts = (posts) => {
 
@@ -13,6 +14,7 @@ const showingPosts = (posts) => {
   //Clear card-container before adding new card:
   postsContainer.textContent = '';
 
+ setTimeout(() => {
   posts.forEach((post) => {
     console.log(post);
 
@@ -39,7 +41,7 @@ const showingPosts = (posts) => {
               <div><i class="fa-regular fa-clock"></i><span> ${post.posted_time} min</span></div>
               </div>
               <div>
-                <button onclick ="addingAnotherInfo('${post.title}','${post.view_count}')" class = "bg-[#10B981] w-10 h-10  rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
+                <button onclick ="addingAnotherInfo('${post.title.replace('\'','')}','${post.view_count}')" class = "bg-[#10B981] w-10 h-10  rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
             </div>
             </div>
            
@@ -50,10 +52,16 @@ const showingPosts = (posts) => {
     postsContainer.appendChild(div);
 
   })
-
-
+ }, 2000);
 
 }
+
+setTimeout(() => {
+  
+}, 2000);
+
+
+
 
 let sum = 1;
 const addingAnotherInfo = (title, view_count) => {
@@ -79,6 +87,7 @@ const addingAnotherInfo = (title, view_count) => {
 
 }
 
+
 //Latest Post: 
 const latestPost = async () => {
   const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
@@ -86,7 +95,7 @@ const latestPost = async () => {
   displayLatestPosts(latestPosts);
 
 }
-
+//ShowingLatestPosts:
 const displayLatestPosts = (latestPosts) => {
   const latestPostContainer = document.getElementById('latestPostContainer');
 
