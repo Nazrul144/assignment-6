@@ -19,13 +19,15 @@
     <style>
         body {
             max-width: 1170px;
-            background-color: tomato;
         }
 
-        .horizontal-line {
-      border-bottom: 1px solid #ccc; /* You can adjust the color and thickness */
-      margin: 20px 0; /* You can adjust the margin as needed */
-    }
+        .allbtn:hover{
+            background-color:#f518c9;
+            color: black;
+            transition: .4s;
+
+        }
+        
     </style>
 
 </head>
@@ -56,32 +58,32 @@
                       </div>
 
                     <div
-                        class="bg-[#4F7DFC] rounded-full font-bold text-white text-xl w-36 h-14 flex items-center justify-center">
-                        <button>Sign In</button></div>
+                        class=" allbtn bg-[#4F7DFC] rounded-full font-bold text-white text-xl w-36 h-14 flex items-center justify-center">
+                        <button >Sign In</button></div>
 
                 </div>
             </div>
         </nav>
-        <div class="bg-black mt-4 lg:flex gap-8">
+        <div class="bg-[#12132D] pb-12 mt-4 lg:flex gap-8 rounded-lg"  style="background-image: url('images/bgbanner.png');">
             <div class="lg:ml-24 mt-8 ml-8 lg:mt-24">
-                <h1 class="text-4xl lg:text-7xl font-extrabold text-white ">Welcome to the <span class="text-blue-500">ReTro</span>
+                <h1 class=" pt-12 lg:pt-0  text-3xl lg:text-7xl font-extrabold text-white ">Welcome to the <span class="text-blue-500">ReTro</span>
                     Forum</h1>
-                <p class="text-xl text-[#FFFFFFCC] mt-6">Share your favorite opinion and win and wp forum coffee mug!
+                <p class="text-xl text-[#FFFFFFCC] mt-6 pr-4">Share your favorite opinion and win and wp forum coffee mug!
                 </p>
                 <!-- Search Field  -->
-                <div class="mt-8 relative">
+                <div class="mt-8 ml-16 relative">
                     <input id="inputSearchField" type="text" placeholder=" Search here anything "
                         class="input input-bordered w-full max-w-xs p-8 rounded-full " />
                     <button
-                       onclick="inputSearchField()" class="bg-[#4F7DFC] rounded-full py-2 px-4 font-bold text-white text-xl absolute left-52 top-3">Search</button>
+                       onclick="inputSearchField()" class="bg-[#4F7DFC] rounded-full py-2 px-4 font-bold text-white text-xl absolute left-52 top-3 allbtn">Search</button>
                 </div>
             </div>
-            <div class="lg:w-5/12 h-72 rounded bg-[white] ml-8 mr-24 lg:mt-24 mb-24">
+            <div class="lg:w-5/12 lg:h-72 rounded-lg bg-[white] ml-16 mr-20 lg:mt-24 lg:mb-24">
                 <div class=" font-medium ml-6 mt-8 text-2xl">
-                    <h1>Registered Users 01</h1>
-                    <h1 class="mt-6">Forum  <span class="ml-28">05</span></h1>
-                    <h1 class="mt-6">Topics <span class="ml-28">01</span></h1>
-                    <h1 class="mt-6">Replies <span class="ml-28">01</span></h1>
+                    <h1>Registered Users <span class="ml-4">01</span></h1>
+                    <h1 class="mt-6">Forum  <span class="ml-32">05</span></h1>
+                    <h1 class="mt-6">Topics <span class="ml-32">01</span></h1>
+                    <h1 class="mt-6">Replies <span class="ml-32">01</span></h1>
                 </div>
             </div>
         </div>
@@ -96,7 +98,7 @@
         <section>
             <h1 class="text-center font-extrabold text-4xl">Let’s Discuss</h1>
             <div>
-                <p class="text-xl w-4/6 text-center mx-auto">Yes, you can run unit tests and view the results directly within the app.The <br> integrated testing features allow for a streamlined .</p>
+                <p class="text-xl w-4/6 text-center mx-auto mt-8">Yes, you can run unit tests and view the results directly within the app.The <br> integrated testing features allow for a streamlined .</p>
             </div>
         </section>
         <section class="dynamic-section mt-24">
@@ -106,9 +108,16 @@
                 </div>
                
                 <!-- Div will be dynamically created here  -->
-                <div id="addingAuthorInfo">
-                    <span class="ml-4 text-xl font-bold">Title</span>
-                    <span class="ml-48 text-xl"><i class="fa-solid fa-check text-[#3fc43f]"></i>Mark as read: <span class="font-bold" id="countCard">0</span></span>
+                <div id="addingAuthorInfo" class="mt-4">
+                    <div class="flex gap-32">
+                        <span class="ml-4 text-xl font-bold">Title</span>
+                    <div class="flex">
+                        <img src="images/Frame.png" alt="">
+                        <span class="text-xl">Mark as read: <span class="font-bold" id="countCard">0</span></span>
+                    </div>
+                  
+                    </div>
+                    
                     
                 </div>
 
@@ -120,9 +129,9 @@
         <section>
             <div class="bg-black flex justify-between rounded-lg mt-24">
                 <div class="w-1/2 mt-24 ml-8 lg:ml-24">
-                    <h1 class="text-4xl font-extrabold text-white">Join Our Forum</h1>
+                    <h1 class=" text-2xl lg:text-4xl font-extrabold text-white">Join Our Forum</h1>
                     <p class="text-xl text-white mt-6 mb-6">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
-                    <button class="btn btn-secondary w-96 text-white font-bold text-xl bg-[#4F7DFC] border-none rounded-full mb-8">Registered Now</button>
+                    <button class="btn btn-secondary lg:w-96 text-white font-bold text-xl bg-[#4F7DFC] border-none rounded-full mb-8">Registered Now</button>
 
                 </div>
                 <div class="mt-32 mb-16 lg:mt-16 lg:mr-24">
@@ -135,19 +144,19 @@
             <h1 class="text-center text-4xl font-bold">Latest Posts</h1>
             <p class="text-xl w-4/5 text-center mx-auto mt-6">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined.</p>
 
-            <div id="latestPostContainer" class="cardSection grid lg:grid-cols-3 mt-12 gap-2">
+            <div id="latestPostContainer" class=" cardSection grid lg:grid-cols-3 mt-16 gap-2">
 
             </div>
         </section>
 
     </main>
 
-    <footer>
+    <footer class="bg-[#12132D0D] rounded-lg">
         <div>
             <div>
-                <h1 class="text-4xl font-bold text-center">ReTro</h1>
+                <h1 class="text-4xl font-bold text-center pt-24">ReTro</h1>
                 <p class="text-center mt-4">Here you can contact with us through the following media. <br>
-                Stay with us</p>
+                Stay with us.</p>
                </div>
         </div>
 
