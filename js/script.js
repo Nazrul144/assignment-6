@@ -11,12 +11,13 @@ const loadData = async (inputText) => {
 const showingPosts = (posts) => {
 
   const postsContainer = document.getElementById('card-container');
-  //Clear card-container before adding new card:
-  postsContainer.textContent = '';
+  
 
  setTimeout(() => {
+      //Clear card-container before adding new card:
+      postsContainer.textContent = '';
+
   posts.forEach((post) => {
-    console.log(post);
 
     //Create a div element:
     const div = document.createElement('div');
